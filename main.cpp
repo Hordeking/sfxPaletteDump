@@ -126,7 +126,7 @@ int main(int argc, char * argv[])
 
     size_t texdataoffset = stoull(string(argv[optind+1]), nullptr, 0); //= 0x090200;
 
-    size_t texdatalength = stoull(string(argv[optind+2]), nullptr, 0); //= 0x090200;
+    size_t texdatalength = stoull(string(argv[optind+2]), nullptr, 0);
 
     ofstream outfile(string(argv[optind+3]));
     if (!outfile.good()) {cerr << "Bad Output!" << endl; return -1;}
