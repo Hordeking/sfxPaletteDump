@@ -18,11 +18,13 @@
 
 #include <getopt.h>
 
+
 #include <iostream>
 #include <iomanip>
 #include <string>
 #include <fstream>
 #include <cmath>
+#include <cstdint>
 
 //#include "SFXObject.h"
 
@@ -50,24 +52,7 @@ int main(int argc, char * argv[])
 	bool singleframe = false;
 	string base_filename("Model");
 
-	int palette[16] = {
-/*		0,
-		11143233,
-		15948137,
-		16493161,
-		16503698,
-		20955,
-		6392571,
-		6937595,
-		11205627,
-		1585225,
-		4809073,
-		7439002,
-		10138307,
-		12835819,
-		15465467,
-		35328,
-*/
+	uint32_t palette[16] = {
 		0x000000,	//Transparent color.
 		0xAA0841,
 		0xF35969,
@@ -169,8 +154,8 @@ int main(int argc, char * argv[])
     romfile.seekg(texdataoffset, ifstream::beg);
     cerr << romfile.tellg() << endl;
 
-    for(int i = 0; i<numlines; ++i){
-    	for(int j = 0; j<2; ++j){
+    for(size_t i = 0; i<numlines; ++i){
+    	for(size_t j = 0; j<2; ++j){
 			for(int k = 0; k<0x80; ++k){
 				char buf = 0, outbuf = 0;
 
